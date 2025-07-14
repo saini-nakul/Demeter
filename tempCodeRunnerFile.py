@@ -1,1 +1,1 @@
-scraper.scrape_comments("https://v.redd.it/s9jl45np5tr91")
+print(comments_list)

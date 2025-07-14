@@ -38,7 +38,7 @@ class RedditScraper:
             for comment in submission.comments.list():
                 # print(comment)
                 comments.append(comment.body)
-            print(comments)
+            return comments
 
         except Exception as e:
             print(f"Can't Scrape comments due to - {e}")
