@@ -17,20 +17,22 @@ const LandingPage = () => {
         <button className="sign-in">Sign in</button>
       </nav>
 
-      <main className="main-content">
-        <div className="center-circle"></div>
-        <h1>
-          Understand <span className="highlight">EMOTIONS</span>
-        </h1>
-        <p className="subtitle">in every sentence</p>
-        <p className="description">
-          Analyze any text and discover whether it’s positive, negative, or neutral — powered by AI.
-        </p>
-        <div className="search-container">
-          <input type="text" placeholder="Search anything..." />
-          <button className="analyze-btn">Analyze Now</button>
-        </div>
-      </main>
+      <div className="main-wrapper">
+        <main className="main-content">
+          <div className="center-circle"></div>
+          <h1>
+            Understand EMOTIONS
+          </h1>
+          <p className="subtitle">in every sentence</p>
+          <p className="description">
+            Analyze any text and discover whether it’s positive, negative, or neutral — powered by AI.
+          </p>
+          <div className="search-container">
+            <input type="text" placeholder="Search anything..." />
+            <button className="analyze-btn">Analyze Now</button>
+          </div>
+        </main>
+      </div>
     </div>
   );
 };
