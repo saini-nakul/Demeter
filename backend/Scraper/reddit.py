@@ -14,17 +14,29 @@ class RedditScraper:
     def scrape_top_posts(self):
         try:
             subreddit = self.reddit.subreddit(self.topic)
+            posts_data = []
 
             for post in subreddit.top(limit=10):
                 reddit_url = "https://www.reddit.com" + post.permalink
-                print(f"Title: {post.title}")
-                print(f"Score: {post.score}")
-                print(f"Reddit Link: {reddit_url}")
-                print(f"External Link: {post.url}")
-                print("-" * 40)
+                post_info = {
+                    "title": post.title,
+                    "score": post.score,
+                    "reddit_url": reddit_url,
+                    "external_url": post.url
+                }
+                posts_data.append(post_info)
+
+            # Sort by score (descending)
+            posts_data.sort(key=lambda x: x["score"], reverse=True)
+
+            # Return the top post only
+            return posts_data[0] if posts_data else None
 
         except Exception as e:
             print(f"Can't Scrape {self.topic} - {e}")
+            return None
+
+        
 
 
 
